@@ -1,10 +1,14 @@
 import { Routes, Route } from 'react-router-dom';
+import Header from './Header/Header';
+import Home from 'pages/Home';
 
 export const App = () => {
   return (
     <div>
-      React homework template
-      <Routes></Routes>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
     </div>
   );
 };

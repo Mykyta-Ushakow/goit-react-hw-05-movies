@@ -1,13 +1,15 @@
-// const API_KEY = 'ba5bcc67972e357b939718a8ae792a34';
+import { axios } from 'axios';
 
-// const READ_TOKEN =
-//   'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiYTViY2M2Nzk3MmUzNTdiOTM5NzE4YThhZTc5MmEzNCIsInN1YiI6IjY1NzFiNDYyZGZlMzFkMDBlMGRhODRjOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.yPHj6OaU0BrsomrkwryTdS1cjcHudho8uvc6soYTGJ0';
+const HEADER = new Headers({
+  accept: 'application/json',
+  Authorization:
+    'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiYTViY2M2Nzk3MmUzNTdiOTM5NzE4YThhZTc5MmEzNCIsInN1YiI6IjY1NzFiNDYyZGZlMzFkMDBlMGRhODRjOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.yPHj6OaU0BrsomrkwryTdS1cjcHudho8uvc6soYTGJ0',
+});
 
-async function getTrending() {
+async function getTrendingToday() {
   const API_KEY = 'ba5bcc67972e357b939718a8ae792a34';
 
-  const READ_TOKEN =
-    'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiYTViY2M2Nzk3MmUzNTdiOTM5NzE4YThhZTc5MmEzNCIsInN1YiI6IjY1NzFiNDYyZGZlMzFkMDBlMGRhODRjOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.yPHj6OaU0BrsomrkwryTdS1cjcHudho8uvc6soYTGJ0';
+  const BASE_URL = 'https://api.themoviedb.org/3/trending/movie/day';
 
   const PARAMS = new URLSearchParams({
     API_KEY,
