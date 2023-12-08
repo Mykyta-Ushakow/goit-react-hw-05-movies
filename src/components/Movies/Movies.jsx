@@ -1,7 +1,14 @@
 import React from 'react';
 
 function Movies() {
-  return <div>Movies</div>;
+  return (
+    <form>
+      <input type="text" />
+      <button type="submit" name="query">
+        Search
+      </button>
+    </form>
+  );
 }
 
 export default Movies;
