@@ -17,7 +17,7 @@ async function getTrendingToday() {
   });
 }
 
-async function searchMovies() {
+async function searchThisMovie() {
   const API_KEY = 'ba5bcc67972e357b939718a8ae792a34';
 
   const READ_TOKEN =
