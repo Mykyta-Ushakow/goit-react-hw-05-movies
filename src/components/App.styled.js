@@ -35,7 +35,12 @@ export const AppStyled = styled('div')`
     text-decoration: underline;
   }
 
-  .trending-list > li {
+  .movie-details-pic {
+    width: 100%;
+    height: 100%;
+  }
+
+  .movie-list > li {
     a {
       color: blue;
       text-decoration: none;
@@ -44,5 +49,17 @@ export const AppStyled = styled('div')`
         text-decoration: underline;
       }
     }
+  }
+
+  .movie-details-wrap {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .genres-list {
+    display: flex;
+    gap: 20px;
+    list-style: none;
   }
 `;
