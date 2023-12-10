@@ -4,7 +4,9 @@ import React, { useEffect, useState } from 'react';
 function Details({ movieId }) {
   const [movieData, setMovieData] = useState({});
 
-  movieDB.getMovieDetails(movieId).then(resp => setMovieData(resp.data));
+  useEffect(() => {
+    movieDB.getMovieDetails(movieId).then(resp => setMovieData(resp.data));
+  }, [movieId]);
 
   return (
     <div className="movie-details-wrap">
@@ -16,6 +18,8 @@ function Details({ movieId }) {
       <div className="movie-details-info">
         <h1>{movieData.title}</h1>
         <p>User Score: {movieData.vote_average}</p>
+        <p>Premiere: {new Date(movieData.release_date).toDateString()}</p>
+        <p>Length: {movieData.runtime} minutes</p>
         <h2>Overview</h2>
         <p>{movieData.overview}</p>
         {movieData.genres && <h2>Genres</h2>}
