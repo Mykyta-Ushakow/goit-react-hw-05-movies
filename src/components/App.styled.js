@@ -61,11 +61,6 @@ export const AppStyled = styled('div')`
     width: 360px;
   }
 
-  .movie-details-pic {
-    height: 100vh;
-    object-fit: contain;
-  }
-
   .movie-list > li {
     a {
       color: blue;
@@ -81,6 +76,12 @@ export const AppStyled = styled('div')`
     display: flex;
     gap: 30px;
     padding: 20px;
+  }
+
+  .movie-details-pic {
+    height: 100vh;
+    object-fit: contain;
+    max-width: 500px;
   }
 
   .movie-details-info > * {
@@ -128,26 +129,20 @@ export const AppStyled = styled('div')`
       justify-content: space-between;
       align-items: center;
 
+      .cast-pic {
+        max-width: 300px;
+      }
       .cast-text {
         font-size: 22px;
         margin: 0;
         padding: 0;
-        text-align: justify;
+        text-align: center;
       }
       .cast-name {
         font-size: 26px;
         margin: 0;
         padding: 0;
-        text-align: justify;
-      }
-      .cast-placeholder {
-        width: 100%;
-        height: 300px;
         text-align: center;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
       }
     }
   }

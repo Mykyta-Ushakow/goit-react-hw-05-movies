@@ -20,17 +20,18 @@ function Cast() {
           <ul className="cast-list">
             {cast.map(member => (
               <li key={member.id} className="cast-card">
-                {member.profile_path ? (
-                  <img
-                    src={movieDB.PORTRAIT_BASE_URL + member.profile_path}
-                    alt={member.name}
-                    className="cast-pic"
-                  />
-                ) : (
-                  <p className="cast-placeholder">No Photo Available</p>
-                )}
+                <img
+                  src={
+                    member.profile_path
+                      ? movieDB.PORTRAIT_BASE_URL + member.profile_path
+                      : movieDB.DEFAULT_IMG
+                  }
+                  alt={member.name}
+                  className="cast-pic"
+                />
+
                 <b className="cast-name">{member.name}</b>
-                <p className="cast-text">As {member.character}</p>
+                <p className="cast-text">As {member.character || 'unknown'}</p>
               </li>
             ))}
           </ul>

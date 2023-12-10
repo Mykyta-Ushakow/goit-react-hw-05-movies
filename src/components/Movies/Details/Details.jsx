@@ -11,15 +11,16 @@ function Details({ movieId }) {
   return (
     movieData && (
       <div className="movie-details-wrap">
-        {movieData.poster_path ? (
-          <img
-            className="movie-details-pic"
-            src={movieDB.POSTER_BASE_URL + movieData.poster_path}
-            alt={movieData.tagline}
-          />
-        ) : (
-          <p className="poster-placeholder">No poster available</p>
-        )}
+        <img
+          className="movie-details-pic"
+          src={
+            movieData.poster_path
+              ? movieDB.POSTER_BASE_URL + movieData.poster_path
+              : movieDB.DEFAULT_IMG
+          }
+          alt={movieData.tagline}
+        />
+
         <div className="movie-details-info">
           <h1>{movieData.title}</h1>
           <p>User Score: {movieData.vote_average || 'not rated'}</p>

@@ -9,6 +9,8 @@ const API_KEY = '895c61bdfc9f5343dbaf9f098b803205';
 
 const POSTER_BASE_URL = 'https://image.tmdb.org/t/p/w400';
 const PORTRAIT_BASE_URL = 'https://image.tmdb.org/t/p/w200';
+const DEFAULT_IMG =
+  'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700';
 
 async function getTrendingToday() {
   const options = {
@@ -99,6 +101,7 @@ async function getMovieReviews(movie_id) {
 const movieDB = {
   POSTER_BASE_URL,
   PORTRAIT_BASE_URL,
+  DEFAULT_IMG,
   getTrendingToday,
   searchThisMovie,
   getMovieDetails,
