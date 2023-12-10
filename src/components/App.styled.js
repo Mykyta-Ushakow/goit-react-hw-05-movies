@@ -1,5 +1,4 @@
 import { styled } from 'styled-components';
-import Reviews from './Reviews/Reviews';
 
 export const AppStyled = styled('div')`
   font-size: 30px;

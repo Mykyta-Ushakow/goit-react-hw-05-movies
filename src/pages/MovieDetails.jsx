@@ -1,5 +1,5 @@
 import Details from 'components/Movies/Details/Details';
-import React, { lazy, useRef } from 'react';
+import React, { useRef } from 'react';
 import {
   Link,
   NavLink,

@@ -1,12 +1,5 @@
 import axios from 'axios';
 
-const HEADER = new Headers({
-  accept: 'application/json',
-  Authorization:
-    'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4OTVjNjFiZGZjOWY1MzQzZGJhZjlmMDk4YjgwMzIwNSIsInN1YiI6IjY1NzFiNDYyZGZlMzFkMDBlMGRhODRjOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.7b1Onj3S4rejgz3a-Fgiu_T_4won42jiMVkH8TtyT9k',
-});
-const API_KEY = '895c61bdfc9f5343dbaf9f098b803205';
-
 const POSTER_BASE_URL = 'https://image.tmdb.org/t/p/w400';
 const PORTRAIT_BASE_URL = 'https://image.tmdb.org/t/p/w200';
 const DEFAULT_IMG =
