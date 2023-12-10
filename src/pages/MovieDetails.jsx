@@ -1,5 +1,5 @@
 import Details from 'components/Movies/Details/Details';
-import React from 'react';
+import React, { lazy, useRef } from 'react';
 import {
   Link,
   NavLink,
@@ -12,10 +12,11 @@ function MovieDetails() {
   const { movieId } = useParams();
 
   const location = useLocation();
+  const backLink = useRef(location.state?.from ?? '/');
 
   return (
     <div>
-      <Link to={location.state.from}>
+      <Link to={backLink.current}>
         <button type="button">Go back </button>
       </Link>
       <Details movieId={movieId} />

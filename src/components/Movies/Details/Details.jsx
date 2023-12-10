@@ -9,26 +9,44 @@ function Details({ movieId }) {
   }, [movieId]);
 
   return (
-    <div className="movie-details-wrap">
-      <img
-        className="movie-details-pic"
-        src={movieDB.POSTER_BASE_URL + movieData.poster_path}
-        alt={movieData.tagline}
-      />
-      <div className="movie-details-info">
-        <h1>{movieData.title}</h1>
-        <p>User Score: {movieData.vote_average}</p>
-        <p>Premiere: {new Date(movieData.release_date).toDateString()}</p>
-        <p>Length: {movieData.runtime} minutes</p>
-        <h2>Overview</h2>
-        <p>{movieData.overview}</p>
-        {movieData.genres && <h2>Genres</h2>}
-        <ul className="genres-list">
-          {movieData.genres &&
-            movieData.genres.map(genre => <li key={genre.id}>{genre.name}</li>)}
-        </ul>
+    movieData && (
+      <div className="movie-details-wrap">
+        {movieData.poster_path ? (
+          <img
+            className="movie-details-pic"
+            src={movieDB.POSTER_BASE_URL + movieData.poster_path}
+            alt={movieData.tagline}
+          />
+        ) : (
+          <p className="poster-placeholder">No poster available</p>
+        )}
+        <div className="movie-details-info">
+          <h1>{movieData.title}</h1>
+          <p>User Score: {movieData.vote_average || 'not rated'}</p>
+          <p>
+            Premiere:{' '}
+            {movieData.release_date
+              ? new Date(movieData.release_date).toDateString()
+              : 'not recorded'}
+          </p>
+          <p>
+            Length:{' '}
+            {movieData.runtime
+              ? movieData.runtime + ' minutes'
+              : 'not recorded'}
+          </p>
+          <h2>Overview:</h2>
+          <p>{movieData.overview || 'No data'}</p>
+          {movieData.genres && <h2>Genres:</h2>}
+          <ul className="genres-list">
+            {movieData.genres &&
+              movieData.genres.map(genre => (
+                <li key={genre.id}>{genre.name}</li>
+              ))}
+          </ul>
+        </div>
       </div>
-    </div>
+    )
   );
 }
 

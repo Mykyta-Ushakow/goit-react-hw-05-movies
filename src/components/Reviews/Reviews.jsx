@@ -12,8 +12,6 @@ function Reviews() {
     });
   }, [movieId]);
 
-  console.log(reviewList);
-
   return (
     <div className="reviews">
       <h2>Reviews</h2>
